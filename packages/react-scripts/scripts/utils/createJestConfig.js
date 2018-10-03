@@ -84,8 +84,9 @@ module.exports = (resolve, rootDir, isEjecting) => {
     });
     const unsupportedKeys = Object.keys(overrides);
     if (unsupportedKeys.length) {
-      const isOverridingSetupFile =
-        unsupportedKeys.indexOf('setupTestFrameworkScriptFile') > -1;
+      const isOverridingSetupFile = unsupportedKeys.includes(
+        'setupTestFrameworkScriptFile'
+      );
 
       if (isOverridingSetupFile) {
         console.error(
